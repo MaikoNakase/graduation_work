@@ -1,7 +1,7 @@
 <?php
-
 session_start();
 require_once('funcs.php');
+// loginCheck();
 
 $name = $_POST['name'];
 $quantity  = $_POST['quantity'];
@@ -26,9 +26,9 @@ $pdo = db_conn();
 
 //３．データ登録SQL作成
 $stmt = $pdo->prepare('INSERT INTO gs_an_table(
-                            name, quantity, category, location, img, date
+                            name, quantity, category, location, img, date, update_time
                         )VALUES(
-                            :name, :quantity, :category, :location, :img, sysdate()
+                            :name, :quantity, :category, :location, :img, sysdate(), sysdate()
                         )');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->bindValue('quantity', $quantity, PDO::PARAM_INT);

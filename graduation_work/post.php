@@ -1,7 +1,7 @@
 <?php
-
 session_start();
 require_once('funcs.php');
+// loginCheck();
 
 $name = '';
 $quantity = '';
@@ -50,6 +50,9 @@ if (isset($_SESSION['post']['location'])) {
                     <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">商品一覧</a>
                     </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="logout.php">ログアウト</a>
+                    </li> -->
                 </ul>
             </div>
         </nav>
